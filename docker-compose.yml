@@ -59,10 +59,10 @@ services:
 #      PHP_XDEBUG_TRACE_OUTPUT_DIR: /mnt/files/xdebug/traces
 #      PHP_BLACKFIRE: 1
     volumes:
-      - codebase:/var/www/html
+#      - codebase:/Users/rhowk1271/Sites/docker/testdrupal
 ## Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
-#      - codebase:/var/www/html:cached # User-guided caching
-#      - docker-sync:/var/www/html # Docker-sync
+      - codebase:/Users/rhowk1271/Sites/docker/testdrupal:cached # User-guided caching
+      - docker-sync:/Users/rhowk1271/Sites/docker/testdrupal # Docker-sync
 ## For Xdebug profiler files
 #      - files:/mnt/files
 
@@ -83,10 +83,10 @@ services:
       NGINX_SERVER_ROOT: /var/www/html/web
 #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
-      - codebase:/var/www/html
+#      - codebase:/Users/rhowk1271/Sites/docker/testdrupal
 # Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
-#      - codebase:/var/www/html:cached # User-guided caching
-#      - docker-sync:/var/www/html # Docker-sync
+      - codebase:/Users/rhowk1271/Sites/docker/testdrupal:cached # User-guidedcaching
+      - docker-sync:/Users/rhowk1271/Sites/docker/testdrupal # Docker-sync
     labels:
       - 'traefik.backend=nginx'
       - 'traefik.port=80'
@@ -253,7 +253,7 @@ services:
 volumes:
   codebase:
 ## Docker-sync for macOS users
-#  docker-sync:
-#    external: true
+  docker-sync:
+    external: true
 ## For Xdebug profiler
 #  files:
